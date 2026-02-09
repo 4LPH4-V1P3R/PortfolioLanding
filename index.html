@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio landing page showcasing experience, projects, and experiments">
+    <title>Portfolio Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Portfolio</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#resume" class="nav-link">Resume</a></li>
+                <li><a href="#labs" class="nav-link">Labs</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Hi, I'm <span class="highlight">Kyle</span></h1>
+                <p class="hero-subtitle">Software Engineer | Cloud Architect | ML Enthusiast</p>
+                <p class="hero-description">
+                    Welcome to my professional portfolio. Explore my projects, experiments, and professional experience.
+                </p>
+                <div class="hero-links">
+                    <a href="https://github.com/4LPH4-V1P3R" target="_blank" rel="noopener noreferrer" class="social-link github">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com/in/kyle-hardiman" target="_blank" rel="noopener noreferrer" class="social-link linkedin">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://yourblog.com" target="_blank" rel="noopener noreferrer" class="social-link blog">
+                        <i class="fas fa-blog"></i>
+                        <span>Blog</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <p class="section-subtitle">A collection of my notable work and contributions</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="project-title">Project Name 1</h3>
+                    <p class="project-description">
+                        Brief description of your project. What it does, technologies used, and key features.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+                    <a href="#" class="project-link" target="_blank">
+                        View Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="project-title">Project Name 2</h3>
+                    <p class="project-description">
+                        Brief description of your project. What it does, technologies used, and key features.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">PostgreSQL</span>
+                    </div>
+                    <a href="#" class="project-link" target="_blank">
+                        View Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="project-title">Project Name 3</h3>
+                    <p class="project-description">
+                        Brief description of your project. What it does, technologies used, and key features.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">AWS</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Kubernetes</span>
+                    </div>
+                    <a href="#" class="project-link" target="_blank">
+                        View Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume">
+        <div class="container">
+            <h2 class="section-title">Resume</h2>
+            <p class="section-subtitle">Download or view my professional resume</p>
+            <div class="resume-options">
+                <div class="resume-card">
+                    <div class="resume-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="resume-title">PDF Version</h3>
+                    <p class="resume-description">
+                        Download a PDF copy of my resume for offline viewing or printing.
+                    </p>
+                    <a href="resume.pdf" download class="resume-button pdf">
+                        <i class="fas fa-download"></i>
+                        Download PDF
+                    </a>
+                </div>
+                <div class="resume-card">
+                    <div class="resume-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="resume-title">Web Version</h3>
+                    <p class="resume-description">
+                        View my interactive resume on the web with enhanced formatting and links.
+                    </p>
+                    <a href="https://www.kylehardiman.com" target="_blank" rel="noopener noreferrer" class="resume-button web">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Online
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Labs Section -->
+    <section id="labs" class="labs">
+        <div class="container">
+            <h2 class="section-title">Labs & Experiments</h2>
+            <p class="section-subtitle">Technical experiments and learning projects</p>
+            <div class="labs-grid">
+                <div class="lab-card">
+                    <div class="lab-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3 class="lab-title">Azure Kubernetes Service (AKS)</h3>
+                    <p class="lab-description">
+                        Experiments with container orchestration, microservices deployment, and Kubernetes best practices on Azure.
+                    </p>
+                    <div class="lab-tags">
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag">Azure</span>
+                        <span class="tag">Docker</span>
+                    </div>
+                    <a href="#" class="lab-link" target="_blank">
+                        Explore Lab <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="lab-card">
+                    <div class="lab-icon">
+                        <i class="fab fa-hashicorp"></i>
+                    </div>
+                    <h3 class="lab-title">Terraform Infrastructure</h3>
+                    <p class="lab-description">
+                        Infrastructure as Code experiments using Terraform for cloud resource provisioning and management.
+                    </p>
+                    <div class="lab-tags">
+                        <span class="tag">Terraform</span>
+                        <span class="tag">IaC</span>
+                        <span class="tag">Cloud</span>
+                    </div>
+                    <a href="#" class="lab-link" target="_blank">
+                        Explore Lab <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="lab-card">
+                    <div class="lab-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="lab-title">ML Pipelines</h3>
+                    <p class="lab-description">
+                        Machine learning pipeline experiments including data processing, model training, and deployment workflows.
+                    </p>
+                    <div class="lab-tags">
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">MLOps</span>
+                    </div>
+                    <a href="#" class="lab-link" target="_blank">
+                        Explore Lab <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's connect and collaborate</p>
+            
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required placeholder="What's this about?">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Your message..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">
+                        <span class="button-text">Send Message</span>
+                        <span class="button-loader" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i> Sending...
+                        </span>
+                    </button>
+                    <div id="formMessage" class="form-message"></div>
+                </form>
+            </div>
+
+            <!-- Social Links -->
+            <div class="contact-links">
+                <a href="mailto:your.email@example.com" class="contact-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                </a>
+                <a href="https://linkedin.com/in/kyle-hardiman" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/4LPH4-V1P3R" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Kyle Hardiman. All rights reserved.</p>
+            <p class="footer-note">Built with passion and attention to detail</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

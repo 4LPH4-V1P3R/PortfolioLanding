@@ -1,0 +1,7 @@
+{
+  "Values": {
+    "RECIPIENT_EMAIL": "your.email@example.com",
+    "SENDGRID_API_KEY": "your-sendgrid-api-key-here",
+    "SENDER_EMAIL": "noreply@yourdomain.com"
+  }
+}

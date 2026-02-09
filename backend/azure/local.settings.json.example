@@ -1,0 +1,10 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "RECIPIENT_EMAIL": "your.email@example.com",
+    "SENDGRID_API_KEY": "your-sendgrid-api-key-here",
+    "SENDER_EMAIL": "noreply@yourdomain.com"
+  }
+}

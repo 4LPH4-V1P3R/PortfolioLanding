@@ -1,0 +1,19 @@
+{
+  "name": "portfolio-backend-vercel",
+  "version": "1.0.0",
+  "description": "Vercel Serverless Functions backend for portfolio contact form",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.0"
+  },
+  "keywords": [
+    "vercel",
+    "serverless",
+    "contact-form"
+  ],
+  "author": "",
+  "license": "MIT"
+}

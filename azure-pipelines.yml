@@ -1,0 +1,81 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  - group: 'portfolio-variables' # Optional: Variable group for secrets
+
+stages:
+  - stage: Build
+    displayName: 'Build'
+    jobs:
+      - job: BuildJob
+        displayName: 'Build and Package'
+        steps:
+          - checkout: self
+            submodules: true
+
+          # Install API dependencies
+          - task: Npm@1
+            displayName: 'Install API dependencies'
+            inputs:
+              command: 'install'
+              workingDir: 'api'
+
+          # Archive the app for deployment
+          - task: CopyFiles@2
+            displayName: 'Copy frontend files'
+            inputs:
+              SourceFolder: '$(Build.SourcesDirectory)'
+              Contents: |
+                index.html
+                styles.css
+                script.js
+                resume.pdf
+                staticwebapp.config.json
+              TargetFolder: '$(Build.ArtifactStagingDirectory)/app'
+
+          # Copy API files
+          - task: CopyFiles@2
+            displayName: 'Copy API files'
+            inputs:
+              SourceFolder: '$(Build.SourcesDirectory)/api'
+              Contents: '**'
+              TargetFolder: '$(Build.ArtifactStagingDirectory)/api'
+
+          # Publish build artifacts
+          - task: PublishBuildArtifacts@1
+            displayName: 'Publish artifacts'
+            inputs:
+              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+              ArtifactName: 'drop'
+              publishLocation: 'Container'
+
+  - stage: Deploy
+    displayName: 'Deploy to Azure'
+    dependsOn: Build
+    condition: succeeded()
+    jobs:
+      - deployment: DeployJob
+        displayName: 'Deploy to Static Web App'
+        environment: 'production'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - download: current
+                  artifact: drop
+
+                # Deploy to Azure Static Web Apps
+                - task: AzureStaticWebApp@0
+                  displayName: 'Deploy to Azure Static Web Apps'
+                  inputs:
+                    app_location: 'app'
+                    api_location: 'api'
+                    output_location: ''
+                    azure_static_web_apps_api_token: '$(DEPLOYMENT_TOKEN)'
+                    workingDirectory: '$(Pipeline.Workspace)/drop'
