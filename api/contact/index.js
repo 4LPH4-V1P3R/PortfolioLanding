@@ -2,23 +2,21 @@
 // This function is automatically deployed with Static Web Apps
 // Located in /api/contact/ directory
 
-// For Static Web Apps, functions use a different structure
-module.exports = async function (req, context) {
+module.exports = async function (context, req) {
     context.log('Contact form submission received');
 
-    // CORS is handled automatically by Static Web Apps
-    // But we can add custom headers if needed
     const headers = {
         'Content-Type': 'application/json'
     };
 
     // Only allow POST
     if (req.method !== 'POST') {
-        return {
+        context.res = {
             status: 405,
             headers: headers,
             body: JSON.stringify({ error: 'Method not allowed' })
         };
+        return;
     }
 
     try {
@@ -26,21 +24,23 @@ module.exports = async function (req, context) {
 
         // Validation
         if (!name || !email || !subject || !message) {
-            return {
+            context.res = {
                 status: 400,
                 headers: headers,
                 body: JSON.stringify({ error: 'All fields are required' })
             };
+            return;
         }
 
         // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-            return {
+            context.res = {
                 status: 400,
                 headers: headers,
                 body: JSON.stringify({ error: 'Invalid email address' })
             };
+            return;
         }
 
         // Get environment variables (set in Azure Static Web Apps Configuration)
@@ -82,7 +82,7 @@ module.exports = async function (req, context) {
         }
 
         // Success response
-        return {
+        context.res = {
             status: 200,
             headers: headers,
             body: JSON.stringify({
@@ -93,7 +93,7 @@ module.exports = async function (req, context) {
 
     } catch (error) {
         context.log.error('Error processing contact form:', error);
-        return {
+        context.res = {
             status: 500,
             headers: headers,
             body: JSON.stringify({
